@@ -86,7 +86,7 @@ const update = async () => {
         });
     });
     return promise.then(() => {
-      writeFile("../json/roster.json", JSON.stringify(enrichedRoster), (err) => {
+      writeFile("./src/json/roster.json", JSON.stringify(enrichedRoster), (err) => {
         if (err) {
           return console.error(err);
         }
