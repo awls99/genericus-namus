@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/genericus-namus/static/js/main.856b0b7f.chunk.js",
+    "main.js.map": "/genericus-namus/static/js/main.856b0b7f.chunk.js.map",
+    "runtime-main.js": "/genericus-namus/static/js/runtime-main.a9a9bc12.js",
+    "runtime-main.js.map": "/genericus-namus/static/js/runtime-main.a9a9bc12.js.map",
+    "static/js/2.57ce21b2.chunk.js": "/genericus-namus/static/js/2.57ce21b2.chunk.js",
+    "static/js/2.57ce21b2.chunk.js.map": "/genericus-namus/static/js/2.57ce21b2.chunk.js.map",
+    "static/js/3.a1a7b126.chunk.js": "/genericus-namus/static/js/3.a1a7b126.chunk.js",
+    "static/js/3.a1a7b126.chunk.js.map": "/genericus-namus/static/js/3.a1a7b126.chunk.js.map",
+    "index.html": "/genericus-namus/index.html",
+    "static/js/2.57ce21b2.chunk.js.LICENSE.txt": "/genericus-namus/static/js/2.57ce21b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9a9bc12.js",
+    "static/js/2.57ce21b2.chunk.js",
+    "static/js/main.856b0b7f.chunk.js"
+  ]
+}
