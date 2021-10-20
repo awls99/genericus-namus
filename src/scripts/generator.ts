@@ -13,6 +13,20 @@ const headers = () => {
   };
 }
 
+const handelError = (error: any) => {
+  if ((error as AxiosError).config) {
+    const e = error as AxiosError;
+    console.log(`${e.code}: ${e.config.method} ${e.config.url} failed with error ${e.message}`);
+    console.log(e.config.headers);
+    console.log(e.config.auth);
+    console.log(e.config.data);
+    console.log(e.config.params);
+  } else {
+    console.log(error);
+  }
+
+}
+
 const update = async () => {
   const enrichedRoster: EnrichedCharacter[] = [];
   const classes = apiClasses.classes.map((c) => c as PlayableClass);
@@ -29,13 +43,15 @@ const update = async () => {
           'Content-Type': "application/x-www-form-urlencoded",
         }
       });
-    console.log(response.data);
+    console.log("Auth successful!");
     const token = response.data as Token
     creds.token = token.access_token;
     if (!token.access_token) { throw new Error("failed to get token"); }
 
+    console.log("Getting Roster");
     response = await axios.get(`${creds.base}/data/wow/guild/magtheridon/genericus-namus/roster`, {
       ...headers(),
+      timeout: 2000,
       params: {
         region: creds.origin,
         namespace: "profile-eu",
@@ -43,12 +59,15 @@ const update = async () => {
       }
     });
     const roster = response.data as Roster;
+    console.log("Got Roster",roster);
     const members = roster.members.filter((m) => m.rank <= 3);
     let promise = Promise.resolve();
     members.forEach((member) => {
       promise = promise.then(() => {
+        console.log(`Updating ${member.character.name}`);
         return axios.get(`${creds.base}/profile/wow/character/${member.character.realm.slug}/${member.character.name.toLowerCase()}/character-media`, {
           ...headers(),
+          timeout: 2000,
           params: {
             region: creds.origin,
             namespace: "profile-eu",
@@ -72,18 +91,7 @@ const update = async () => {
         }).then(()=> {
           console.log(`Updated ${member.character.name}`);
         })
-        .catch((error) => {
-          if ((error as AxiosError).config) {
-            const e = error as AxiosError;
-            console.log(`${e.code}: ${e.config.method} ${e.config.url} failed with error ${e.message}`);
-            console.log(e.config.headers);
-            console.log(e.config.auth);
-            console.log(e.config.data);
-            console.log(e.config.params);
-          } else {
-            console.log(error);
-          }
-        });
+        .catch(handelError);
     });
     return promise.then(() => {
       writeFile("./src/json/roster.json", JSON.stringify(enrichedRoster), (err) => {
@@ -95,16 +103,7 @@ const update = async () => {
     })
   }
   catch (error) {
-    if ((error as AxiosError).config) {
-      const e = error as AxiosError;
-      console.log(`${e.code}: ${e.config.method} ${e.config.url} failed with error ${e.message}`);
-      console.log(e.config.headers);
-      console.log(e.config.auth);
-      console.log(e.config.data);
-      console.log(e.config.params);
-    } else {
-      console.log(error);
-    }
+    handelError(error);
   }
 };
 update();
