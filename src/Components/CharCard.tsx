@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { EnrichedCharacter, MediaType } from '../models/models';
 
 function CharChard(character: EnrichedCharacter) {
-  const mediaUrl = character.media.assets?.find((asset) => { return asset.key === MediaType.INSET })?.value;
+  const mediaUrl = character.media?.find((asset) => { return asset.key === MediaType.INSET })?.value;
   return (
     <Item>
       <Card>

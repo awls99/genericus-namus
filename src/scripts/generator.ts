@@ -80,8 +80,9 @@ const update = async () => {
           const playable_class = classes.find((c) => c.id === member.character.playable_class?.id);
           const enrichedCharacter: EnrichedCharacter = {
             ...member.character,
-            media: media,
+            media: media.assets,
             playable_class: playable_class!,
+            rank: member.rank,
           };
           enrichedRoster.push(enrichedCharacter);
         }).then(()=> {

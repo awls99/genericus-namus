@@ -54,13 +54,19 @@ export interface PlayableRace {
   id: number;
 }
 
+export interface CharacterMin {
+  key: Key;
+  name: string;
+  id: number;
+  realm: Realm;
+}
 
 export interface Character {
   key: Key;
   name: string;
   id: number;
   realm: Realm;
-  level?: number;
+  level: number;
   playable_class?: PlayableClass;
   playable_race?: PlayableRace;
 }
@@ -138,9 +144,10 @@ export interface PlayableClassDetail {
 
 export interface EnrichedCharacter {
   name: string;
-  level?: number;
-  playable_class?: PlayableClass;
-  media: MediaList;
+  level: number;
+  playable_class: PlayableClass;
+  media?: Asset[];
+  rank: number;
 }
 
 export interface Classes {
@@ -161,7 +168,7 @@ export interface Asset {
 
 export interface MediaList {
   _links: Links;
-  character: Character;
+  character: CharacterMin;
   assets?: Asset[];
 }
 
