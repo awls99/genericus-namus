@@ -1,6 +1,3 @@
-import { Achievement } from "./achievements";
-
-// messy file will fix later
 export interface Token {
   access_token: string;
 }
@@ -56,12 +53,6 @@ export interface PlayableRace {
   id: number;
 }
 
-export interface CharacterMin {
-  key: Key;
-  name: string;
-  id: number;
-  realm: Realm;
-}
 
 export interface Character {
   key: Key;
@@ -69,8 +60,8 @@ export interface Character {
   id: number;
   realm: Realm;
   level: number;
-  playable_class?: PlayableClass;
-  playable_race?: PlayableRace;
+  playable_class: PlayableClass;
+  playable_race: PlayableRace;
 }
 
 export interface Member {
@@ -148,9 +139,7 @@ export interface EnrichedCharacter {
   name: string;
   level: number;
   playable_class: PlayableClass;
-  media?: Asset[];
-  rank: number;
-  achievements: Achievement[];
+  media: MediaList;
 }
 
 export interface Classes {
@@ -165,13 +154,13 @@ export enum MediaType {
   MAINRAW = "main-raw",
 }
 export interface Asset {
-  key: string;
+  key: MediaType;
   value: string;
 }
 
 export interface MediaList {
   _links: Links;
-  character: CharacterMin;
-  assets?: Asset[];
+  character: Character;
+  assets: Asset[];
 }
 
