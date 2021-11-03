@@ -9,6 +9,8 @@ import { createTheme } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import TopBar from './Components/TopBar';
+import About from './Components/About';
+
 
 const theme = createTheme({
   palette: {
@@ -21,11 +23,15 @@ const theme = createTheme({
     },
   },
 });
+
+
+
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
     <ThemeProvider theme={theme}>
       <TopBar/>
+      <About/>
       <Roster />
     </ThemeProvider>
   </React.StrictMode>,
