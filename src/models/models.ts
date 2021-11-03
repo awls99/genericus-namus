@@ -1,4 +1,4 @@
-import { Achievement } from "./achievements";
+import { AchievementCriteria } from "./achievements";
 
 // messy file will fix later
 export interface Token {
@@ -150,7 +150,7 @@ export interface EnrichedCharacter {
   playable_class: PlayableClass;
   media?: Asset[];
   rank: number;
-  achievements: Achievement[];
+  achievements: AchievementCriteria[];
 }
 
 export interface Classes {

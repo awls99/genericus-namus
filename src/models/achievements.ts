@@ -5,17 +5,17 @@ export interface ChildCriteria {
   id: number;
   amount: number;
   is_completed: boolean;
-  child_criteria: ChildCriteria[];
+  child_criteria?: ChildCriteria[];
 }
 
 export interface Criteria {
   id: number;
   is_completed: boolean;
-  child_criteria: ChildCriteria[];
+  child_criteria?: ChildCriteria[];
   amount?: number;
 }
 
-export interface Achievement {
+export interface AchievementCriteria {
   id: number;
   achievement: Achievement;
   criteria: Criteria;
@@ -66,7 +66,7 @@ export interface CharacterAchievements {
   _links: Links;
   total_quantity: number;
   total_points: number;
-  achievements: Achievement[];
+  achievements: AchievementCriteria[];
   category_progress: CategoryProgress[];
   recent_events: RecentEvent[];
   character: Character;

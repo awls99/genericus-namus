@@ -4,7 +4,11 @@ import Grid from "@mui/material/Grid/Grid";
 import CharChard from './CharCard';
 import { EnrichedCharacter } from '../models/models';
 function Roster() {
-  const filteredRoster: EnrichedCharacter[] = roster.filter((char) => { return char.level === 60 });
+  const filteredRoster: EnrichedCharacter[] = roster
+  .filter((char) => { return char.level === 60 })
+  .sort((char1, char2)=>{
+    return char1.rank - char2.rank;
+  });
   return (
     <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
       {filteredRoster.map((char, index) => {
