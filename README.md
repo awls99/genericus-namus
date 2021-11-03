@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Genericus Namus (Magtheridon-EU) Guild Page
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Current way of updating data:
+1. Create a src/scripts/blizzCreds.ts file, it's used for contacting with battle.net and blizzard's API. it should follow this interface 
+```
+interface Creds {
+  base: string; // url
+  clientid: string; // see blizzard's api documentation to generate this
+  secret: string; // and this
+  locale: string; // usually `en-GB`
+  origin: string; // usually `eu`
+  token?: string; // this gets updated autoamtically by the login call
+  patch: string; // usually `static-eu`
+};
+```
+2. Compile and run `src/scripts/generator.ts`, this will write down a new `src/json/roster.json` which is where the information lies.
+
+## Automatic Deploys
+The script `src/scripts/update.sh` is ran every two hours and updats the data and deploys the new version of the GitHub Page, this allows the page to function without a backend for now.
+
 
 ## Available Scripts
 
@@ -14,10 +32,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm deploy`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deploys the app as a github page.
 
 ### `npm run build`
 
