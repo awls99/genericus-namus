@@ -10,6 +10,7 @@ import { grey } from '@mui/material/colors';
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import TopBar from './Components/TopBar';
 import About from './Components/About';
+import HallOfFame from './Components/HallOfFame';
 
 
 const theme = createTheme({
@@ -32,6 +33,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <TopBar/>
       <About/>
+      <HallOfFame/>
       <Roster />
     </ThemeProvider>
   </React.StrictMode>,

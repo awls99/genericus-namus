@@ -18,6 +18,9 @@ function TopBar() {
         <ScrollTo anchorId="#about-text">
           <Button color="inherit">About</Button>
         </ScrollTo>
+        <ScrollTo anchorId="#hall-of-fame">
+          <Button color="inherit">Hall of Fame</Button>
+        </ScrollTo>
       </Toolbar>
     </AppBar>
   );
