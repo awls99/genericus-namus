@@ -14,7 +14,7 @@ function Roster() {
     <Paper sx={{
       padding: "8px"
     }}>
-      <Typography variant="h6" color="inherit" component="div" id="roster">Roster</Typography>
+      <Typography variant="h6" color="inherit" component="div" id="roster">Raiding Roster</Typography>
 
       <Grid container spacing={{ xs: 1, md: 2, lx: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {filteredRoster.map((char, index) => {
