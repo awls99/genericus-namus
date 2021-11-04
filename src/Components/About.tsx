@@ -5,7 +5,10 @@ import { Paper } from '@mui/material';
 
 function About() {
   return (
-    <Paper>
+    <Paper sx ={{
+      marginTop: "8px",
+      padding: "8px"
+    }}>
       <Typography variant="h6" color="inherit" component="div" id="about-text">
         About Generics Namus
       </Typography>

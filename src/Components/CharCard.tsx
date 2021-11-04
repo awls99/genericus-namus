@@ -13,7 +13,7 @@ function CharChard(character: EnrichedCharacter) {
   const mediaUrl = character.media?.find((asset) => { return asset.key === MediaType.INSET })?.value;
   return (
     <Item>
-      <Card>
+      <Card raised={true} variant="outlined">
         <CardMedia
           component="img"
           image={mediaUrl}

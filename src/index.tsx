@@ -11,6 +11,7 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import TopBar from './Components/TopBar';
 import About from './Components/About';
 import HallOfFame from './Components/HallOfFame';
+import { Container } from '@mui/material';
 
 
 const theme = createTheme({
@@ -23,6 +24,7 @@ const theme = createTheme({
       main: grey[700],
     },
   },
+  spacing: 2
 });
 
 
@@ -31,10 +33,12 @@ ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
     <ThemeProvider theme={theme}>
-      <TopBar/>
-      <About/>
-      <HallOfFame/>
-      <Roster />
+      <Container maxWidth="xl">
+        <TopBar />
+        <About />
+        <HallOfFame />
+        <Roster />
+      </Container>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
