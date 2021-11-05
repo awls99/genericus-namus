@@ -4,16 +4,16 @@
     "main.js.map": "/genericus-namus/static/js/main.90397806.chunk.js.map",
     "runtime-main.js": "/genericus-namus/static/js/runtime-main.39b9d198.js",
     "runtime-main.js.map": "/genericus-namus/static/js/runtime-main.39b9d198.js.map",
-    "static/js/2.29403a62.chunk.js": "/genericus-namus/static/js/2.29403a62.chunk.js",
-    "static/js/2.29403a62.chunk.js.map": "/genericus-namus/static/js/2.29403a62.chunk.js.map",
+    "static/js/2.e890e896.chunk.js": "/genericus-namus/static/js/2.e890e896.chunk.js",
+    "static/js/2.e890e896.chunk.js.map": "/genericus-namus/static/js/2.e890e896.chunk.js.map",
     "static/js/3.523cf743.chunk.js": "/genericus-namus/static/js/3.523cf743.chunk.js",
     "static/js/3.523cf743.chunk.js.map": "/genericus-namus/static/js/3.523cf743.chunk.js.map",
     "index.html": "/genericus-namus/index.html",
-    "static/js/2.29403a62.chunk.js.LICENSE.txt": "/genericus-namus/static/js/2.29403a62.chunk.js.LICENSE.txt"
+    "static/js/2.e890e896.chunk.js.LICENSE.txt": "/genericus-namus/static/js/2.e890e896.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.39b9d198.js",
-    "static/js/2.29403a62.chunk.js",
+    "static/js/2.e890e896.chunk.js",
     "static/js/main.90397806.chunk.js"
   ]
 }
