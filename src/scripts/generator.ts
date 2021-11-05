@@ -5,6 +5,8 @@ import * as apiClasses from "../json/classes.json"
 import { writeFile } from "fs";
 import * as qs from "querystring"
 import { CharacterAchievements } from "../models/achievements";
+import { RIOProfile } from "../models/raider.ts.model";
+import { getCharacterRuns, compileGuildRuns } from "./raider.io";
 
 const headers = () => {
   return {
@@ -69,6 +71,7 @@ const update = async () => {
     console.log("Got Roster", roster);
     const members = roster.members.filter((m) => m.rank <= 3);
     let promise = Promise.resolve();
+    const profiles: RIOProfile[] = [];
     members.forEach((member) => {
       let enrichedCharacter: EnrichedCharacter;
       promise = promise.then(() => {
@@ -126,6 +129,11 @@ const update = async () => {
             enrichedRoster.push(enrichedCharacter);
           }
           handelError(error);
+        })
+        .then(()=>{
+          return getCharacterRuns(member.character.name);
+        }).then((profile)=>{
+          profiles.push(profile);
         });
     });
     return promise.then(() => {
@@ -135,10 +143,24 @@ const update = async () => {
         }
         console.log("File created!");
       });
-    })
+    }).then(()=>{
+      const runs = compileGuildRuns(profiles);
+      const filtered = Object.keys(runs).map((key)=>{
+        if(runs[key].names.length >= 3){
+          return runs[key];
+        }
+      }).filter((run) => !!run);
+      writeFile("./src/json/mplusruns.json", JSON.stringify(filtered), (err) => {
+        if (err) {
+          return console.error(err);
+        }
+        console.log("M+ Files created!");
+      });
+    });
   }
   catch (error) {
     handelError(error);
   }
 };
 update();
+

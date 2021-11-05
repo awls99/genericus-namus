@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageList, ImageListItem, ListSubheader, ImageListItemBar, Paper, Typography } from '@mui/material';
+import { ImageList, ImageListItem, ImageListItemBar, Paper, Typography } from '@mui/material';
 import gallery from "../json/gallery.json";
 import { Gallery } from '../models/gallery';
 
