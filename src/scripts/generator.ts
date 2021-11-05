@@ -121,7 +121,12 @@ const update = async () => {
         .then(() => {
           console.log(`Updated ${member.character.name}`);
         })
-        .catch(handelError);
+        .catch((error) => {
+          if(enrichedCharacter && enrichedCharacter.name && enrichedCharacter.media){
+            enrichedRoster.push(enrichedCharacter);
+          }
+          handelError(error);
+        });
     });
     return promise.then(() => {
       writeFile("./src/json/roster.json", JSON.stringify(enrichedRoster), (err) => {
