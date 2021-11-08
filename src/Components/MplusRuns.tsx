@@ -23,7 +23,7 @@ function MplusRuns() {
       padding: "8px",
       marginBottom: "8px",
     }}>
-      <Typography variant="h6" color="inherit" component="div" id="roster">Mythic Plus Activity</Typography>
+      <Typography variant="h6" color="inherit" component="div" id="mplus">Mythic Plus Activity</Typography>
       <Grid container spacing={{ xs: 1, md: 2, lx: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {guildRuns.map((run, index) => {
           if (index > 8) return "";
