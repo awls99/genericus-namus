@@ -14,7 +14,7 @@ interface Creds {
   patch: string; // usually `static-eu`
 };
 ```
-2. Compile and run `src/scripts/generator.ts`, this will write down a new `src/json/roster.json` which is where the information lies.
+2. `npm run generate` this will write down a new `src/json/roster.json` which is where the information lies.
 
 ## Automatic Deploys
 The script `src/scripts/update.sh` is ran every two hours and updats the data and deploys the new version of the GitHub Page, this allows the page to function without a backend for now.
@@ -24,6 +24,8 @@ The script `src/scripts/update.sh` is ran every two hours and updats the data an
 
 In the project directory, you can run:
 
+### `npm run generate`
+Updates the data jsons with fresher data.
 ### `npm start`
 
 Runs the app in the development mode.\
