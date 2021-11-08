@@ -32,6 +32,7 @@ function MplusRuns() {
           );
         })}
       </Grid>
+      <Typography variant="subtitle2" color="inherit" component="div">Mythic Plus info powered by <a href="https://raider.io">Raider.io</a></Typography>
     </Paper>
   );
 }
