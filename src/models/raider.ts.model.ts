@@ -39,3 +39,11 @@ export interface RIOProfile {
   profile_banner: string;
   mythic_plus_recent_runs: MythicPlusRecentRun[];
 }
+
+export interface GuildRun {
+  names: string[];
+  dungeon: string;
+  level: number;
+  success: boolean;
+  date: Date;
+}

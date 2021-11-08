@@ -1,0 +1,14 @@
+export enum ClassColors {
+  "DEATH KNIGHT" = "#C41E3A",
+  "DEMON HUNTER" = "#A330C9",
+  DRUID = "#FF7C0A",
+  HUNTER = "#AAD372",
+  MAGE = "#3FC7EB",
+  MONK = "#00FF98",
+  PALADIN = "#F48CBA",
+  PRIEST = "#FFFFFF",
+  ROGUE = "#FFF468",
+  SHAMAN = "#0070DD",
+  WARLOCK = "#8788EE",
+  WARRIOR = "#C69B6D",
+}

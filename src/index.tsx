@@ -12,6 +12,7 @@ import TopBar from './Components/TopBar';
 import About from './Components/About';
 import HallOfFame from './Components/HallOfFame';
 import { Container } from '@mui/material';
+import MplusRuns from './Components/MplusRuns';
 
 
 const theme = createTheme({
@@ -37,6 +38,7 @@ ReactDOM.render(
         <TopBar />
         <About />
         <HallOfFame />
+        <MplusRuns />
         <Roster />
       </Container>
     </ThemeProvider>
