@@ -21,6 +21,9 @@ function TopBar() {
         <ScrollTo anchorId="#hall-of-fame">
           <Button color="inherit">Hall of Fame</Button>
         </ScrollTo>
+        <ScrollTo anchorId="#mplus">
+          <Button color="inherit">Mythic Plus Activity</Button>
+        </ScrollTo>
         <ScrollTo anchorId="#roster">
           <Button color="inherit">Roster</Button>
         </ScrollTo>
