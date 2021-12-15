@@ -38,6 +38,7 @@ export interface RIOProfile {
   profile_url: string;
   profile_banner: string;
   mythic_plus_recent_runs: MythicPlusRecentRun[];
+  timewalks?: Dungeon[];
 }
 
 export interface GuildRun {
@@ -47,3 +48,37 @@ export interface GuildRun {
   success: boolean;
   date: Date;
 }
+
+export interface RIOProfileV2 {
+  characterDetails: CharacterDetails
+}
+interface CharacterDetails {
+  character: Character;
+}
+interface Character {
+  id: number;
+}
+
+export interface DungeonDetail {
+  id: number;
+  name: string;
+  short_name: string;
+  slug: string;
+  expansion_id: number;
+  patch: string;
+  keystone_timer_ms: number;
+}
+export interface Dungeon {
+  season: string;
+  status: string;
+  dungeon: DungeonDetail;
+  keystone_run_id: number;
+  mythic_level: number;
+  completed_at: Date;
+  num_chests: number;
+}
+
+export interface Runs {
+  dungeons: Dungeon[];
+}
+
