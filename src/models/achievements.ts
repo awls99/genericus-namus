@@ -5,13 +5,11 @@ export interface ChildCriteria {
   id: number;
   amount: number;
   is_completed: boolean;
-  child_criteria?: ChildCriteria[];
 }
 
 export interface Criteria {
   id: number;
   is_completed: boolean;
-  child_criteria?: ChildCriteria[];
   amount?: number;
 }
 
