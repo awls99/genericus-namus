@@ -26,7 +26,7 @@
     "gh-pages": "^3.2.3"
   },
   "scripts": {
-    "generate": "tsc --resolveJsonModule src/scripts/generator.ts & node src/scripts/generator.js",
+    "generate": "tsc --resolveJsonModule src/scripts/generator.ts && node src/scripts/generator.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
