@@ -28,7 +28,7 @@
   "scripts": {
     "generate": "tsc --resolveJsonModule src/scripts/generator.ts && node src/scripts/generator.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
