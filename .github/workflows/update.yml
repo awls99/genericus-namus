@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: test
         env:
-        CLIENTID: ${{ secrets.CLIENTID }}
+          CLIENTID: ${{ secrets.CLIENTID }}
         run: |
           env | grep -i client && echo $CLIENTID
       # - name: Install dependencies
