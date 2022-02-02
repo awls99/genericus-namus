@@ -1,4 +1,3 @@
-import { creds } from "./blizzCreds";
 import axios, { AxiosError } from "axios";
 import { EnrichedCharacter, MediaList, PlayableClass, Roster, Token } from "../models/models";
 import * as apiClasses from "../json/classes.json"
@@ -7,6 +6,21 @@ import * as qs from "querystring"
 import { CharacterAchievements } from "../models/achievements";
 import { RIOProfile } from "../models/raider.ts.model";
 import { getCharacterRuns, compileGuildRuns } from "./raider.io";
+import { Creds } from "./creds.model";
+
+if(!process.env.BLIZZ_CLIENTID || !process.env.BLIZZ_SECRET){
+  console.log("Please set BLIZZ_CLIENTID and BLIZZ_SECRET environment variables");
+  process.exit(1);
+}
+
+const creds: Creds = {
+  base: "https://eu.api.blizzard.com",
+  clientid: process.env.BLIZZ_CLIENTID!,
+  secret: process.env.BLIZZ_SECRET!,
+  locale: "en_GB",
+  origin: "eu",
+  patch: "static-eu",
+}
 
 const headers = () => {
   return {
