@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Item from "@mui/material/Grid";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { EnrichedCharacter, MediaType } from '../models/models';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import StarIcon from '@mui/icons-material/Star';
-import { Achievement, AchievementCriteria } from '../models/achievements';
+import { AchievementCriteria } from '../models/achievements';
 import { Tooltip } from '@mui/material';
 
 function CharChard(character: EnrichedCharacter) {

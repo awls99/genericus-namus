@@ -1,3 +1,5 @@
+/* eslint-disable */
+// having issue with 'MediaType' is assigned a value but never used but it's being used >.<n
 import { AchievementCriteria } from "./achievements";
 
 // messy file will fix later
