@@ -10,7 +10,8 @@ import { Creds } from "./creds.model";
 
 if(!process.env.BLIZZ_CLIENTID || !process.env.BLIZZ_SECRET){
   console.log("Please set BLIZZ_CLIENTID and BLIZZ_SECRET environment variables");
-  console.log("Current Env Keys: ", Object.keys(process.env));
+  console.log("Current Env Keys: ", Object.keys(process.env).join(" - "));
+  console.log("Current Github Env: ", process.env.GITHUB_ENV);
   process.exit(1);
 }
 
