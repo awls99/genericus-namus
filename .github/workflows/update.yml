@@ -12,8 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: test
+        env:
+        CLIENTID: ${{ secrets.CLIENTID }}
         run: |
-          env
+          env | grep -i client && echo $CLIENTID
       # - name: Install dependencies
       #   run: |
       #     npm ci --include=dev
