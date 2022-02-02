@@ -14,16 +14,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: test
-        env:
-          BLIZZ_CLIENTID: ${{ secrets.BLIZZ_CLIENTID }}
-          BLIZZ_SECRET: ${{ secrets.BLIZZ_SECRET }}
-        run: |
       - name: Install dependencies
         run: |
           npm ci --include=dev
 
       - name: Compile Typescript and Run update script
+        env:
+          BLIZZ_CLIENTID: ${{ secrets.BLIZZ_CLIENTID }}
+          BLIZZ_SECRET: ${{ secrets.BLIZZ_SECRET }}
         run: |
           npm run generate
         
