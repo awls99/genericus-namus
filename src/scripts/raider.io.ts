@@ -14,7 +14,7 @@ export const getCharacterRuns = async (name: string): Promise<RIOProfile> => {
       }
     });
     rioProfile = response.data as RIOProfile;
-    rioProfile.timewalks = await getCharactersTimeWalkingRuns(name);
+    // rioProfile.timewalks = await getCharactersTimeWalkingRuns(name);
     return rioProfile;
   }
   catch {

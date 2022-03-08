@@ -127,7 +127,7 @@ const update = async () => {
         })
         .then((response) => {
           const achievements = response.data as CharacterAchievements;
-          const interesting = [15078,15309]; // 15078 SL KSM S2, 15309 Timewalking mage tower
+          const interesting = [15499,15309]; //15499 SL KSM S3 | 15078 SL KSM S2 | 15309 Timewalking mage tower
           enrichedCharacter.achievements = achievements.achievements.filter((ach) => {
             return !!ach.criteria && ach.criteria.is_completed && interesting.includes(ach.id);
           });

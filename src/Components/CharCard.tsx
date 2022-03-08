@@ -34,7 +34,7 @@ function CharChard(character: EnrichedCharacter) {
 
 function verified(achievents: AchievementCriteria[]) {
   const achievementMap:{[key: number]:any} = {
-    15078: <VerifiedIcon/>,
+    15499: <VerifiedIcon/>,
     15309: <StarIcon />
   };
   return achievents.map((achievement) => {
