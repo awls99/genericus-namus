@@ -84,7 +84,7 @@ const update = async () => {
     });
     const roster = response.data as Roster;
     console.log("Got Roster", roster);
-    const members = roster.members.filter((m) => m.rank <= 3);
+    const members = roster.members.filter((m) => m.rank <= 6 && m.character.level === 60);
     let promise = Promise.resolve();
     const profiles: RIOProfile[] = [];
     members.forEach((member) => {
